@@ -1,0 +1,22 @@
+# --- ASGI Server ---
+uvicorn[standard]
+
+# --- Web Framework ---
+fastapi
+
+# --- Database ORM and Adapter ---
+sqlalchemy
+psycopg2-binary
+alembic
+
+# --- Authentication & Security ---
+python-jose[cryptography] # For JWT handling
+passlib[bcrypt]           # For password hashing (good practice, even if not used directly in OAuth)
+authlib                   # For the OAuth 2.0 flow with Google
+
+# --- Data Validation & Settings ---
+pydantic
+pydantic-settings         # For managing environment variables
+
+# --- Other Utilities ---
+python-dotenv             # To load the .env file
