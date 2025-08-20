@@ -12,12 +12,20 @@ class Settings(BaseSettings):
     
     # JWT Authentication
     SECRET_KEY: str
-    ALGORITHM: str
-    ACCESS_TOKEN_EXPIRE_MINUTES: int
+    ALGORITHM: str = "HS256"
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     
     # Google OAuth 2.0
     GOOGLE_CLIENT_ID: str
     GOOGLE_CLIENT_SECRET: str
+    
+    # URLs
+    BACKEND_URL: str = "http://127.0.0.1:8000"
+    FRONTEND_URL: str = "http://localhost:5173"
+    
+    # Environment
+    ENVIRONMENT: str = "development"
+    COOKIE_DOMAIN: str = None
     
     # Pydantic model configuration
     model_config = SettingsConfigDict(env_file=".env", case_sensitive=True)
