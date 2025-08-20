@@ -15,8 +15,14 @@ passlib[bcrypt]           # For password hashing (good practice, even if not use
 authlib                   # For the OAuth 2.0 flow with Google
 
 # --- Data Validation & Settings ---
-pydantic
+pydantic[email]          # For email validation
 pydantic-settings         # For managing environment variables
 
 # --- Other Utilities ---
 python-dotenv             # To load the .env file
+# --- Testing ---
+pytest
+pytest-asyncio           # For async FastAPI tests
+httpx                    # For FastAPI test client
+factory-boy             # For clean test data
+email-validator          # Email validation for Pydantic
